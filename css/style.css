@@ -444,6 +444,14 @@ svg path {
   box-shadow: 4px 4px 9px rgba(18, 17, 17, 0.11);
 }
 
+.problems__load-more {
+  display: none;
+}
+
+#more-problems {
+  display: none;
+}
+
 .problems__card img {
   width: 430px;
   height: auto;
@@ -885,11 +893,49 @@ svg path {
   .problems__wrapper {
     width: auto;
     justify-content: center;
+    gap: 0;
+  }
+
+  .problems__card {
+    margin-bottom: 20px;
   }
 
   .problems__card,
   .problems__card img {
     width: 440px;
+  }
+
+  .problems__wrapper .problems__card:nth-child(1n + 5) {
+    max-height: 0;
+    margin-bottom: 0;
+    opacity: 0;
+    transition: 0.1s ease-in;
+  }
+  .problems__load-more {
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0 150px;
+    z-index: 1;
+    display: block;
+    cursor: pointer;
+  }
+
+  .problems__load-more .problems__load-more-loaded {
+    display: none;
+  }
+
+  #more-problems:checked ~ .problems__card:nth-child(1n + 5) {
+    max-height: 999px;
+    opacity: 1;
+    transition: 0.2s ease-in;
+  }
+
+  #more-problems:checked ~ .problems__load-more .problems__load-more-loaded {
+    display: block;
+  }
+
+  #more-problems:checked ~ .problems__load-more .problems__load-more-unloaded {
+    display: none;
   }
 }
 
