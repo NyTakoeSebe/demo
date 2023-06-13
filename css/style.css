@@ -476,6 +476,128 @@ svg path {
   padding: 0 20px 20px 20px;
 }
 
+/* offers */
+.offers {
+  padding: 130px 0;
+  margin-bottom: 20px;
+  background: var(--mint);
+  color: var(--white);
+}
+
+.offers__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.offers__item {
+  width: 305px;
+  position: relative;
+  cursor: pointer;
+}
+
+.offers__item::after {
+  content: '';
+  width: 1px;
+  height: 140px;
+  display: block;
+  background: var(--white);
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.offers__item:last-child:after {
+  display: none;
+}
+
+.offers__item-price {
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.offers__item-details {
+  display: none;
+}
+
+.offers__item-details:hover {
+  display: flex;
+}
+
+.offers__item-price:hover ~ .offers__item-details,
+.offers__item-details:hover {
+  width: 305px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  background: var(--white);
+  color: var(--text);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: showDetails 0.2s;
+}
+
+.offers__item-details ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.offers__item-details li {
+  padding-bottom: 20px;
+  font-size: 22px;
+  position: relative;
+}
+
+.offers__item-details li::after {
+  content: '';
+  width: 250px;
+  height: 1px;
+  display: block;
+  background: #d1d1d1;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.offers__price-name {
+  padding-bottom: 10px;
+  font-family: 'Futura New', sans-serif;
+  font-weight: 450;
+  font-size: 40px;
+  line-height: 1.2;
+  position: relative;
+}
+
+.offers__price-name::after {
+  content: '';
+  width: 30px;
+  height: 1px;
+  display: block;
+  background: var(--white);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.offers__price {
+  font-size: 40px;
+  line-height: 1.1;
+}
+
 /* footer */
 .footer {
   padding: 60px 0;
@@ -634,6 +756,21 @@ svg path {
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .offers__wrapper {
+    width: 620px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 305px);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 50px 30px;
+  }
+
+  .offers__item:nth-child(even)::after {
+    display: none;
   }
 }
 
@@ -964,6 +1101,50 @@ svg path {
     flex-direction: column;
     gap: 30px;
   }
+
+  .offers {
+    padding: 60px 0;
+  }
+
+  .offers__wrapper {
+    width: auto;
+    grid-template-columns: repeat(1, 305px);
+    justify-content: center;
+    gap: 20px 0;
+  }
+
+  .offers__item-price:hover ~ .offers__item-details {
+    gap: 20px;
+    padding: 20px;
+    z-index: 2;
+  }
+
+  .offers__item-details li {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+  }
+
+  .offers__item::after {
+    width: 140px;
+    height: 1px;
+    top: 0;
+    left: 50%;
+    bottom: -15px;
+    transform: translate(-50%, 0);
+    z-index: 0;
+  }
+
+  .offers__item:nth-child(even)::after {
+    display: block;
+  }
+
+  .offers__item:last-child::after {
+    display: block;
+  }
+
+  .offers__item:first-child::after {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -1061,6 +1242,14 @@ svg path {
   .problems__card img {
     width: 335px;
   }
+
+  .problems__load-more {
+    width: 200px;
+    padding: 0;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
 }
 
 @media screen and (max-width: 350px) {
@@ -1115,5 +1304,19 @@ svg path {
   to {
     opacity: 0;
     right: -300px;
+  }
+}
+
+@keyframes showDetails {
+  from {
+    opacity: 0;
+    left: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  to {
+    opacity: 1;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
