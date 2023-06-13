@@ -777,6 +777,86 @@ svg path {
   border-radius: 50%;
 }
 
+/* posts */
+.posts {
+  padding: 100px 0;
+}
+
+.posts__title {
+  margin-bottom: 30px;
+  font-family: 'Futura New', sans-serif;
+  font-weight: 450;
+  font-size: 40px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.posts__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 15px;
+  align-items: flex-start;
+}
+
+.posts__item {
+  width: 430px;
+  background: var(--white);
+  box-shadow: 4px 4px 9px rgba(18, 17, 17, 0.11);
+  position: relative;
+}
+
+.posts__item:hover .posts__item-title {
+  color: var(--sea);
+}
+
+.posts__item-category {
+  padding: 5px 10px;
+  background: var(--white);
+  position: absolute;
+  top: 220px;
+  left: 10px;
+}
+
+.posts__item-content {
+  padding: 30px 20px 20px 20px;
+}
+
+.posts__item-image {
+  width: 430px;
+  height: 265px;
+  object-fit: cover;
+}
+
+.posts__item-date {
+  margin-bottom: 10px;
+  color: var(--mint);
+}
+
+.posts__item-title {
+  margin-bottom: 10px;
+  font-family: 'Futura New', sans-serif;
+  font-weight: 450;
+  font-size: 22px;
+  line-height: 1.2;
+  transition: var(--transition);
+}
+
+.posts__item-desc {
+  height: 65px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.posts__load-more {
+  display: none;
+}
+
+#more-posts {
+  display: none;
+}
+
 /* footer */
 .footer {
   padding: 60px 0;
@@ -854,6 +934,29 @@ svg path {
   .problems__card,
   .problems__card img {
     width: 380px;
+  }
+
+  .posts__item {
+    width: 335px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .posts__wrapper {
+    max-width: 1100px;
+    width: auto;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 20px 15px;
+  }
+
+  .posts__item-image {
+    width: 335px;
+    height: auto;
+  }
+
+  .posts__item-category {
+    top: 160px;
   }
 }
 
@@ -961,7 +1064,8 @@ svg path {
   }
 
   .intro__title,
-  .reviews__title {
+  .reviews__title,
+  .posts__title {
     font-size: 36px;
   }
 
@@ -1020,6 +1124,11 @@ svg path {
     gap: 30px;
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+
+  .posts__wrapper {
+    max-width: 690px;
+    gap: 20px;
   }
 }
 
@@ -1102,7 +1211,8 @@ svg path {
   .programs,
   .problems,
   .benefits,
-  .reviews {
+  .reviews,
+  .posts {
     padding: 60px 0;
   }
 
@@ -1284,7 +1394,8 @@ svg path {
 
   .intro__title,
   .problems__title,
-  .reviews__title {
+  .reviews__title,
+  .posts__title {
     font-size: 30px;
   }
 
@@ -1379,6 +1490,58 @@ svg path {
 
   .reviews__slider-bullet.swiper-pagination-bullet.swiper-pagination-bullet-active {
     background: var(--sea);
+  }
+
+  .posts__wrapper {
+    max-width: 335px;
+    width: auto;
+    gap: 0;
+  }
+
+  .posts__item {
+    margin-bottom: 20px;
+  }
+
+  .posts__item-image {
+    width: 335px;
+  }
+
+  .posts__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .posts__item:nth-child(1n + 5) {
+    max-height: 0;
+    margin-bottom: 0;
+    opacity: 0;
+    transition: 0.1s ease-in;
+  }
+
+  .posts__load-more {
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    z-index: 1;
+    display: block;
+    cursor: pointer;
+  }
+
+  .posts__load-more .posts__load-more-loaded {
+    display: none;
+  }
+
+  #more-posts:checked ~ .posts__item:nth-child(1n + 5) {
+    max-height: 999px;
+    opacity: 1;
+    transition: 0.2s ease-in;
+  }
+
+  #more-posts:checked ~ .posts__load-more .posts__load-more-loaded {
+    display: block;
+  }
+
+  #more-posts:checked ~ .posts__load-more .posts__load-more-unloaded {
+    display: none;
   }
 }
 
@@ -1514,7 +1677,8 @@ svg path {
   .problems,
   .footer,
   .benefits,
-  .reviews {
+  .reviews,
+  .posts {
     padding: 30px 0;
   }
 
