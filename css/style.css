@@ -683,6 +683,100 @@ svg path {
   bottom: 0;
 }
 
+/* reviews */
+.reviews {
+  padding: 110px 0 80px 0;
+  background: var(--white);
+  position: relative;
+}
+
+.reviews__slider {
+  max-width: 1320px;
+  width: 100%;
+  height: 280px;
+}
+
+.reviews__decor {
+  width: 370px;
+  height: 120px;
+  background: url(../img/reviews/decor.png) no-repeat center / cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.reviews__title {
+  margin-bottom: 30px;
+  font-family: 'Futura New', sans-serif;
+  font-weight: 450;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.reviews__wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.reviews__slider-prev,
+.reviews__slider-next {
+  width: 65px;
+  height: 65px;
+  background: var(--mint);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.reviews__slider-prev:hover,
+.reviews__slider-next:hover {
+  opacity: 0.8;
+}
+
+.reviews__slider-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: -20px;
+  right: 0;
+}
+
+.reviews__slider-pagination.swiper__pagination.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  display: none;
+}
+
+.reviews__slider-slide {
+  width: 425px;
+}
+
+.reviews__slider-slide h3 {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.reviews__slider-slide p {
+  height: 110px;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.reviews__slider-slide img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 /* footer */
 .footer {
   padding: 60px 0;
@@ -866,7 +960,8 @@ svg path {
     max-width: 500px;
   }
 
-  .intro__title {
+  .intro__title,
+  .reviews__title {
     font-size: 36px;
   }
 
@@ -1006,7 +1101,8 @@ svg path {
 
   .programs,
   .problems,
-  .benefits {
+  .benefits,
+  .reviews {
     padding: 60px 0;
   }
 
@@ -1187,7 +1283,8 @@ svg path {
   }
 
   .intro__title,
-  .problems__title {
+  .problems__title,
+  .reviews__title {
     font-size: 30px;
   }
 
@@ -1255,6 +1352,33 @@ svg path {
 
   #more-problems:checked ~ .problems__load-more .problems__load-more-unloaded {
     display: none;
+  }
+
+  .reviews {
+    background: var(--white-bg);
+  }
+
+  .reviews__slider-buttons {
+    display: none;
+  }
+
+  .reviews__slider {
+    padding-bottom: 330px;
+  }
+
+  .reviews__slider-pagination.swiper__pagination.swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    display: block;
+    bottom: 0;
+  }
+
+  .reviews__slider-bullet {
+    width: 10px;
+    height: 10px;
+  }
+
+  .reviews__slider-bullet.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: var(--sea);
   }
 }
 
@@ -1339,6 +1463,23 @@ svg path {
     flex-direction: column;
     align-items: center;
   }
+
+  .reviews__decor {
+    width: 120px;
+    height: 370px;
+    background: url(../img/reviews/decor-mobile.png) no-repeat center;
+    left: initial;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .reviews__slider-slide img {
+    margin: 0 auto;
+    display: block;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -1372,7 +1513,8 @@ svg path {
   .programs,
   .problems,
   .footer,
-  .benefits {
+  .benefits,
+  .reviews {
     padding: 30px 0;
   }
 
