@@ -857,6 +857,84 @@ svg path {
   display: none;
 }
 
+/* consultation */
+.consultation {
+  padding-bottom: 100px;
+}
+
+.consultation__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.consultation__title {
+  margin-bottom: 30px;
+  font-family: 'Futura New', sans-serif;
+  font-weight: 450;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.consultation__form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.consultation__form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.consultation__form-item label {
+  font-family: 'Futura New Book', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.consultation__form-field {
+  width: 300px;
+  height: 40px;
+  padding: 10px 40px 10px 10px;
+  font-family: 'Futura New Book', sans-serif;
+  font-size: 16px;
+  color: var(--text);
+  outline: none;
+  background: var(--white);
+  border: 1px solid #dedede;
+}
+
+.consultation__form-field[type='date'] {
+  padding: 10px;
+}
+
+.consultation__form-filed--text,
+.consultation__form-item:last-child {
+  max-width: 620px;
+  width: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  display: block;
+}
+
+.consultation__form-filed--text {
+  height: 200px;
+  padding: 10px;
+  border: 1px solid #dedede;
+  resize: none;
+  font-family: 'Futura New Book', sans-serif;
+  font-size: 16px;
+  outline: none;
+}
+
+.consultation__content button {
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+}
+
 /* footer */
 .footer {
   padding: 60px 0;
@@ -1033,6 +1111,14 @@ svg path {
   .benefits__content {
     gap: 20px;
   }
+
+  .consultation__form-field {
+    width: 250px;
+  }
+
+  .consultation__form-item:last-child {
+    width: 520px;
+  }
 }
 
 @media screen and (max-width: 1240px) {
@@ -1088,6 +1174,14 @@ svg path {
 
   .offers__item:nth-child(even)::after {
     display: none;
+  }
+
+  .consultation__form-field {
+    width: 200px;
+  }
+
+  .consultation__form-item:last-child {
+    width: 420px;
   }
 }
 
@@ -1181,6 +1275,10 @@ svg path {
     text-align: center;
   }
 
+  .consultation__title {
+    font-size: 36px;
+  }
+
   .programs__decor {
     width: 120px;
     height: 370px;
@@ -1189,6 +1287,14 @@ svg path {
     top: 50%;
     transform: translateY(-50%);
     background: url('../img/programs/decor-mobile.png') no-repeat center / contain;
+  }
+
+  .consultation__form-field {
+    width: 300px;
+  }
+
+  .consultation__form-item:last-child {
+    max-width: 300px;
   }
 }
 
@@ -1214,6 +1320,10 @@ svg path {
   .reviews,
   .posts {
     padding: 60px 0;
+  }
+
+  .consultation {
+    padding-bottom: 60px;
   }
 
   .problems__wrapper {
@@ -1290,6 +1400,34 @@ svg path {
 
   .benefits__content-link {
     align-self: center;
+  }
+
+  .consultation__image,
+  .consultation__image img {
+    height: 375px;
+  }
+
+  .consultation__image {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .consultation__wrapper {
+    width: auto;
+    padding-top: 400px;
+    position: relative;
+  }
+
+  .consultation__content {
+    width: 620px;
+    margin: 0 auto;
+  }
+
+  .consultation__form-item:last-child {
+    max-width: 620px;
+    width: 100%;
   }
 }
 
@@ -1395,7 +1533,8 @@ svg path {
   .intro__title,
   .problems__title,
   .reviews__title,
-  .posts__title {
+  .posts__title,
+  .consultation__title {
     font-size: 30px;
   }
 
@@ -1620,6 +1759,16 @@ svg path {
   }
 }
 
+@media screen and (max-width: 670px) {
+  .consultation__content {
+    width: 520px;
+  }
+
+  .consultation__form-field {
+    width: 250px;
+  }
+}
+
 @media screen and (max-width: 660px) {
   .benefits__content-items {
     width: auto;
@@ -1682,6 +1831,10 @@ svg path {
     padding: 30px 0;
   }
 
+  .consultation {
+    padding-bottom: 30px;
+  }
+
   .about__signature,
   .about__decor {
     display: none;
@@ -1693,6 +1846,16 @@ svg path {
 
   .programs__wrapper {
     gap: 30px;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .consultation__content {
+    width: 400px;
+  }
+
+  .consultation__form-field {
+    width: 400px;
   }
 }
 
@@ -1752,6 +1915,38 @@ svg path {
   .benefits__image-desc {
     bottom: -50px;
   }
+
+  .consultation__form-field {
+    width: 335px;
+  }
+
+  .consultation__form-item:last-child {
+    max-width: 335px;
+  }
+
+  .consultation__content {
+    width: 335px;
+  }
+
+  .consultation__image {
+    top: 200px;
+    left: -20px;
+    transform: translateY(-50%);
+  }
+
+  .consultation__image,
+  .consultation__image img {
+    width: 100vw;
+    height: 375px;
+  }
+
+  .consultation__image-desc {
+    bottom: -50px;
+  }
+
+  .consultation__wrapper {
+    padding-top: 450px;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -1770,6 +1965,20 @@ svg path {
     text-align: center;
     margin: 0 auto;
     margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .consultation__content {
+    width: 300px;
+  }
+
+  .consultation__form-field {
+    width: 300px;
+  }
+
+  .consultation__form-item:last-child {
+    width: 300px;
   }
 }
 
