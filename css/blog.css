@@ -1,0 +1,282 @@
+main {
+  min-height: calc(100vh - 283px);
+}
+
+/* blog */
+.blog {
+  padding-top: 108px;
+  color: var(--white);
+}
+
+.blog__wrapper {
+  height: 395px;
+  background: url('../img/blog.jpg') no-repeat center / cover;
+}
+
+.blog__inner {
+  padding-top: 240px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blog__title {
+  font-family: 'Futura New', sans-serif;
+  font-weight: 450;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.blog__breadcrumbs ul {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.blog__breadcrumbs li {
+  position: relative;
+}
+
+.blog__breadcrumbs a {
+  font-size: 22px;
+}
+
+.blog__breadcrumbs li::after {
+  content: '';
+  width: 2px;
+  height: 22px;
+  background: var(--white);
+  position: absolute;
+  right: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.blog__breadcrumbs li:last-child::after {
+  display: none;
+}
+
+.posts__category-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 15px;
+  align-items: flex-start;
+}
+
+/* posts */
+
+.posts {
+  padding: 100px 0;
+}
+
+.posts__categories {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.posts__category {
+  padding: 5px 10px;
+  background: var(--white);
+  border: 1px solid #c0c0c0;
+  transition: var(--transition);
+}
+
+.posts__category:hover {
+  color: var(--sea);
+}
+
+.posts__category.active:hover {
+  color: var(--text);
+}
+
+.posts__category.active {
+  border: 1px solid #04688f;
+}
+
+/* post */
+
+.post {
+  padding: 30px 0 100px 0;
+}
+
+.post__title {
+  margin-bottom: 30px;
+  font-family: 'Futura New', sans-serif;
+  font-weight: 450;
+  font-size: 40px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.post__image {
+  margin-bottom: 30px;
+  width: 100%;
+  height: auto;
+  max-height: 665px;
+  object-fit: cover;
+}
+
+.post__wrapper {
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.post__wrapper h2 {
+  font-family: 'Futura New', sans-serif;
+  font-weight: 450;
+  font-size: 40px;
+  line-height: 1.2;
+}
+
+.post__wrapper h3 {
+  font-family: 'Futura New', sans-serif;
+  font-weight: 450;
+  font-size: 22px;
+  line-height: 1.2;
+}
+
+.post__wrapper ol,
+.post__wrapper ul {
+  margin-left: 30px;
+}
+
+.post__categories {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.post__category {
+  color: var(--sea);
+}
+
+/* media */
+@media screen and (max-width: 1370px) {
+  .posts__category-wrapper {
+    max-width: 1100px;
+    width: auto;
+    margin: 0 auto;
+    justify-content: space-between;
+    gap: 20px 15px;
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  .posts__category-wrapper {
+    max-width: 690px;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .blog {
+    padding-top: 82px;
+  }
+
+  .blog__wrapper {
+    height: 275px;
+  }
+
+  .blog__inner {
+    padding-top: 130px;
+    gap: 20px;
+  }
+
+  .blog__title {
+    font-size: 36px;
+  }
+
+  .posts {
+    padding: 60px 0;
+  }
+
+  .post {
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .posts__category-wrapper {
+    max-width: 335px;
+    width: auto;
+    gap: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .blog {
+    padding-top: 62px;
+  }
+
+  .blog__wrapper {
+    height: 200px;
+  }
+
+  .blog__inner {
+    padding-top: 80px;
+    gap: 10px;
+  }
+
+  .blog__title {
+    font-size: 30px;
+  }
+
+  .post__title {
+    margin-bottom: 20px;
+    font-size: 36px;
+  }
+
+  .post__image {
+    margin-bottom: 20px;
+  }
+
+  .post__wrapper {
+    gap: 20px;
+  }
+
+  .post__wrapper h2 {
+    font-size: 36px;
+  }
+
+  .post__wrapper h3 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .blog__wrapper {
+    height: 180px;
+  }
+
+  .blog__inner {
+    padding-top: 80px;
+    gap: 10px;
+  }
+
+  .blog__title {
+    font-size: 30px;
+  }
+
+  .posts,
+  .post {
+    padding: 30px 0;
+  }
+
+  .post__title {
+    font-size: 30px;
+  }
+
+  .post__wrapper h2 {
+    font-size: 30px;
+  }
+}
